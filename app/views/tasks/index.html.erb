@@ -1,9 +1,9 @@
 <div class="container">
-  <h1>📝 My tasks</h1>
+  <h1>⚙️ My tasks</h1>
   <ul>
     <% @tasks.each do |task| %>
-      <li><%= link_to task[:title], task_path(task["id"]) %></li>
+      <li><%= link_to task[:title], task_path(task["id"]) %> - <%= link_to "🗑️", delete_task_path(task["id"]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
     <% end %>
   </ul>
-  <p><%= link_to "Add a new task", tasks_new_path %></p>
+  <p><%= link_to "Add a new task", new_task_path %></p>
 </div>
